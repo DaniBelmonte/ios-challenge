@@ -11,7 +11,7 @@ import SwiftUI
 struct challengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdListBuilder().build()
         }
     }
 }

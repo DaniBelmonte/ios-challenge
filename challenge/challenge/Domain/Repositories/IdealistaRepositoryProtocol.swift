@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol AdRepositoryProtocol {
+    func fetchAdList() async throws -> [Ad]
+}

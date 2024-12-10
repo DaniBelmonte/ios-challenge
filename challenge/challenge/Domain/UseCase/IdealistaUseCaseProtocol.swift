@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol FetchAdListUseCaseProtocol {
+    func fetchAds() async throws -> [Ad]
+}
