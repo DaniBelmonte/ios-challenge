@@ -7,41 +7,23 @@
 
 import Foundation
 
-protocol FavoriteRepositoryProtocol {
-    func addFavorite(propertyCode: String)
-    func removeFavorite(propertyCode: String)
-    func isFavorite(propertyCode: String) -> Bool
-    func getAllFavorites() -> [String]
+protocol FavoriteAdsRepositoryProtocol {
+    func loadFavoritePropertyCodes() throws -> [String]
+    func saveFavorite(propertyCode: String) throws
 }
 
-class FavoriteRepository: FavoriteRepositoryProtocol {
-    private let favoritesKey = "favoritePropertyCodes"
+class FavoriteAdsRepository: FavoriteAdsRepositoryProtocol {
+    private let dataSource: FavoriteAdsDataSourceProtocol
 
-    func addFavorite(propertyCode: String) {
-        var favorites = getAllFavorites()
-        if !favorites.contains(propertyCode) {
-            favorites.append(propertyCode)
-            saveFavorites(favorites)
-        }
+    init(dataSource: FavoriteAdsDataSourceProtocol) {
+        self.dataSource = dataSource
     }
 
-    func removeFavorite(propertyCode: String) {
-        var favorites = getAllFavorites()
-        if let index = favorites.firstIndex(of: propertyCode) {
-            favorites.remove(at: index)
-            saveFavorites(favorites)
-        }
+    func saveFavorite(propertyCode: String) throws {
+        try dataSource.saveFavoritePropertyCode(propertyCode)
     }
 
-    func isFavorite(propertyCode: String) -> Bool {
-        return getAllFavorites().contains(propertyCode)
-    }
-
-    func getAllFavorites() -> [String] {
-        return UserDefaults.standard.array(forKey: favoritesKey) as? [String] ?? []
-    }
-
-    private func saveFavorites(_ favorites: [String]) {
-        UserDefaults.standard.set(favorites, forKey: favoritesKey)
+    func loadFavoritePropertyCodes() throws -> [String] {
+        return try dataSource.loadFavoritePropertyCodes()
     }
 }

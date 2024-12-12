@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  uikitChallenge
+
+  Created by Daniel Belmonte Valero on 12/12/24.
+  
+*/
+
+"ads_title" = "Anuncios";
+"error_alert_title" = "Error";
+"error_alert_message" = "No se pudieron cargar los anuncios: %@";
+"ok_button" = "OK";
+"favorites_updated_title" = "Actualizado";
+"favorites_updated_message" = "El anuncio se ha actualizado de tu lista de favoritos";
+"ad_detail_title" = "Detalle del Anuncio";
+"loading_text" = "Cargando...";
+"image_load_error" = "Error al cargar la imagen";
+"no_images_available" = "No hay imágenes disponibles.";
+"price_text" = "Precio:";
+"see_more_button" = "Ver más";
+"see_less_button" = "Ver menos";
+"main_features" = "Características principales";
+"size_text" = "📏";
+"rooms_text" = "🚪";
+"bathrooms_text" = "🛁";
+"location_text" = "Ubicación";
+"additional_info" = "Información adicional";
+"has_lift" = "🛗 Ascensor";
+"has_boxroom" = "📦 Trastero";
+"is_duplex" = "🏢 Dúplex";
+"energy_certification" = "Certificación energética";
+"energy_type" = "🔋 Tipo";
+"emissions" = "🌿 Emisiones";
+"ad_load_error" = "No se ha podido cargar la información del anuncio.";
+"retry_button" = "Reintentar";
+"ad_detail_title" = "Detalle del Anuncio";
+"rent_operation" = "Alquiler";
+"sale_operation" = "Venta";
+"m²" = "m²";

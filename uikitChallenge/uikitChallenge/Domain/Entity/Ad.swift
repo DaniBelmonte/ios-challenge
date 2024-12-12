@@ -26,6 +26,7 @@ struct Ad: Identifiable {
     let latitude: Double
     let longitude: Double
     let parkingSpace: ParkingSpace?
+    var isFavorite: Bool
 
 
     init(dto: AdDTO) {
@@ -36,7 +37,16 @@ struct Ad: Identifiable {
         self.currency = dto.priceInfo.price.currencySuffix
         self.thumbnailUrl = dto.thumbnail
         self.propertyType = dto.propertyType
-        self.operation = dto.operation
+        self.operation = {
+            switch dto.operation.lowercased() {
+            case "rent":
+                return "rent_operation".localized
+            case "sale":
+                return "sale_operation".localized
+            default:
+                return dto.operation.capitalized
+            }
+        }()
         self.size = dto.size
         self.rooms = dto.rooms
         self.bathrooms = dto.bathrooms
@@ -51,7 +61,7 @@ struct Ad: Identifiable {
         } else {
             self.parkingSpace = nil
         }
-
+        self.isFavorite = false
     }
 }
 

@@ -18,13 +18,12 @@ struct AdDetailView: View {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    
     var body: some View {
         Group {
             //MARK: - Loader
             if viewModel.isLoading {
                 VStack {
-                    ProgressView("Cargando...")
+                    ProgressView("loading_text".localized)
                 }
             } else if let adDetail = viewModel.adDetail {
                 ScrollView {
@@ -40,7 +39,7 @@ struct AdDetailView: View {
                                                     .resizable()
                                                     .scaledToFill()
                                             } else if phase.error != nil {
-                                                Color.red
+                                                Text("image_load_error".localized)
                                             } else {
                                                 ProgressView()
                                             }
@@ -52,17 +51,15 @@ struct AdDetailView: View {
                                 .padding(.horizontal)
                             }
                         } else {
-                            Text("No hay imágenes disponibles.")
+                            Text("no_images_available".localized)
                                 .foregroundColor(.gray)
                                 .padding(.horizontal)
                         }
                         
                         // MARK: - Title and Price
-                        
-                        
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
-                                Text("Precio: \(adDetail.price, specifier: "%.2f") €")
+                                Text("\(adDetail.price, specifier: "%.2f") €")
                                     .font(.title2)
                                 Spacer()
                                 Text(adDetail.operation.capitalized)
@@ -84,7 +81,7 @@ struct AdDetailView: View {
                                 Button(action: {
                                     isExpanded.toggle()
                                 }) {
-                                    Text(isExpanded ? "Ver menos" : "Ver más")
+                                    Text(isExpanded ? "see_less_button".localized : "see_more_button".localized)
                                         .font(.caption)
                                         .fontWeight(.bold)
                                         .foregroundColor(.blue)
@@ -95,15 +92,13 @@ struct AdDetailView: View {
                         }
                         .padding(.horizontal)
                         
-                        // Características principales
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Características principales")
+                            Text("main_features".localized)
                                 .font(.headline)
                             HStack {
-                                Text("📏 \(adDetail.moreCharacteristics.constructedArea) m²")
-                                Text("🏡 \(adDetail.propertyType.capitalized)")
-                                Text("🚪 \(adDetail.moreCharacteristics.roomNumber) habitaciones")
-                                Text("🛁 \(adDetail.moreCharacteristics.bathNumber) baños")
+                                Text("size_text".localized + " \(adDetail.moreCharacteristics.constructedArea) \("m²".localized)")
+                                Text("rooms_text".localized + " \(adDetail.moreCharacteristics.roomNumber)")
+                                Text("bathrooms_text".localized + " \(adDetail.moreCharacteristics.bathNumber)")
                             }
                             .font(.subheadline)
                         }
@@ -113,7 +108,7 @@ struct AdDetailView: View {
                         
                         // MARK: - Ubication
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Ubicación")
+                            Text("location_text".localized)
                                 .font(.headline)
                                 .padding(.horizontal)
                             
@@ -132,18 +127,18 @@ struct AdDetailView: View {
                         
                         // MARK: - Additional Info
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Información adicional")
+                            Text("additional_info".localized)
                                 .font(.headline)
                                 .padding(.horizontal)
                             HStack {
                                 if adDetail.moreCharacteristics.hasLift {
-                                    Text("🛗 Ascensor")
+                                    Text("has_lift".localized)
                                 }
                                 if adDetail.moreCharacteristics.hasBoxroom {
-                                    Text("📦 Trastero")
+                                    Text("has_boxroom".localized)
                                 }
                                 if adDetail.moreCharacteristics.isDuplex {
-                                    Text("🏢 Dúplex")
+                                    Text("is_duplex".localized)
                                 }
                             }
                             .font(.subheadline)
@@ -152,33 +147,30 @@ struct AdDetailView: View {
                         
                         Divider()
                         
-                        // Certificación energética
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Certificación energética")
+                            Text("energy_certification".localized)
                                 .font(.headline)
                                 .padding(.horizontal)
-                            Text("🔋 Tipo: \(adDetail.energyCertification.energyConsumption)")
+                            Text("energy_type".localized + ": \(adDetail.energyCertification.energyConsumption)")
                                 .font(.subheadline)
                                 .padding(.horizontal)
-                            Text("🌿 Emisiones: \(adDetail.energyCertification.emissions)")
+                            Text("emissions".localized + ": \(adDetail.energyCertification.emissions)")
                                 .font(.subheadline)
                                 .padding(.horizontal)
                         }
                     }
                 }
             } else {
+                //MARK: Error
                 VStack(spacing: 16) {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .font(.system(size: 50))
-                        .foregroundColor(.red)
-                    Text("No se ha podido cargar la información del anuncio.")
+                    Text("ad_load_error".localized)
                         .font(.title3)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                     Button(action: {
                         viewModel.fetchAdDetail(propertyCode: propertyCode)
                     }) {
-                        Text("Reintentar")
+                        Text("retry_button".localized)
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
@@ -189,7 +181,7 @@ struct AdDetailView: View {
                 .padding()
             }
         }
-        .navigationTitle("Detalle del Anuncio")
+        .navigationTitle("ad_detail_title".localized)
         .onAppear {
             viewModel.fetchAdDetail(propertyCode: propertyCode)
         }
