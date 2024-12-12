@@ -14,8 +14,8 @@
 		852717672D09B3AA00131E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852717662D09B3AA00131E4B /* Assets.xcassets */; };
 		8527176A2D09B3AA00131E4B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 852717692D09B3AA00131E4B /* Base */; };
 		852717842D09B62C00131E4B /* IdealistaRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717732D09B62C00131E4B /* IdealistaRepositoryProtocol.swift */; };
-		852717852D09B62C00131E4B /* FetchAdListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717752D09B62C00131E4B /* FetchAdListUseCase.swift */; };
-		852717862D09B62C00131E4B /* FetchAdListUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717762D09B62C00131E4B /* FetchAdListUseCaseProtocol.swift */; };
+		852717852D09B62C00131E4B /* IdealistaUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717752D09B62C00131E4B /* IdealistaUseCase.swift */; };
+		852717862D09B62C00131E4B /* IdealistaUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717762D09B62C00131E4B /* IdealistaUseCaseProtocol.swift */; };
 		852717872D09B62C00131E4B /* LocalIdealistaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852717792D09B62C00131E4B /* LocalIdealistaDataSource.swift */; };
 		852717882D09B62C00131E4B /* IdealistaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8527177C2D09B62C00131E4B /* IdealistaRepository.swift */; };
 		8527178A2D09B62C00131E4B /* detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 852717802D09B62C00131E4B /* detail.json */; };
@@ -42,32 +42,7 @@
 		8550354A2D09D54A00F385B1 /* AdDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855035492D09D54A00F385B1 /* AdDetailUseCase.swift */; };
 		8550354C2D09D5A700F385B1 /* AdDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550354B2D09D5A700F385B1 /* AdDetailViewModel.swift */; };
 		8550354E2D09D67D00F385B1 /* AdDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550354D2D09D67D00F385B1 /* AdDetailBuilder.swift */; };
-		855035502D0AD56B00F385B1 /* FavoriteAdsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550354F2D0AD56B00F385B1 /* FavoriteAdsDataSource.swift */; };
-		855035522D0AD95F00F385B1 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855035512D0AD95F00F385B1 /* FavoritesRepository.swift */; };
-		855035542D0AD9EA00F385B1 /* SaveFavoriteAdsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855035532D0AD9EA00F385B1 /* SaveFavoriteAdsUseCase.swift */; };
-		855035572D0ADA9900F385B1 /* LoadFavoritesAdsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855035562D0ADA9900F385B1 /* LoadFavoritesAdsUseCase.swift */; };
-		8550356C2D0B1A5300F385B1 /* uikitChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550356B2D0B1A5300F385B1 /* uikitChallengeUITests.swift */; };
-		8550356E2D0B1A5300F385B1 /* uikitChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550356D2D0B1A5300F385B1 /* uikitChallengeUITestsLaunchTests.swift */; };
-		855035842D0B35C600F385B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 855035822D0B35C600F385B1 /* Localizable.strings */; };
-		855035862D0B367400F385B1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855035852D0B367400F385B1 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		855035602D0B1A3900F385B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 852717522D09B3A900131E4B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 852717592D09B3A900131E4B;
-			remoteInfo = uikitChallenge;
-		};
-		8550356F2D0B1A5300F385B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 852717522D09B3A900131E4B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 852717592D09B3A900131E4B;
-			remoteInfo = uikitChallenge;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8527175A2D09B3A900131E4B /* uikitChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uikitChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +54,8 @@
 		852717692D09B3AA00131E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8527176B2D09B3AA00131E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852717732D09B62C00131E4B /* IdealistaRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealistaRepositoryProtocol.swift; sourceTree = "<group>"; };
-		852717752D09B62C00131E4B /* FetchAdListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAdListUseCase.swift; sourceTree = "<group>"; };
-		852717762D09B62C00131E4B /* FetchAdListUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAdListUseCaseProtocol.swift; sourceTree = "<group>"; };
+		852717752D09B62C00131E4B /* IdealistaUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealistaUseCase.swift; sourceTree = "<group>"; };
+		852717762D09B62C00131E4B /* IdealistaUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealistaUseCaseProtocol.swift; sourceTree = "<group>"; };
 		852717792D09B62C00131E4B /* LocalIdealistaDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalIdealistaDataSource.swift; sourceTree = "<group>"; };
 		8527177C2D09B62C00131E4B /* IdealistaRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealistaRepository.swift; sourceTree = "<group>"; };
 		852717802D09B62C00131E4B /* detail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = detail.json; sourceTree = "<group>"; };
@@ -107,34 +82,10 @@
 		855035492D09D54A00F385B1 /* AdDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailUseCase.swift; sourceTree = "<group>"; };
 		8550354B2D09D5A700F385B1 /* AdDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewModel.swift; sourceTree = "<group>"; };
 		8550354D2D09D67D00F385B1 /* AdDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailBuilder.swift; sourceTree = "<group>"; };
-		8550354F2D0AD56B00F385B1 /* FavoriteAdsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAdsDataSource.swift; sourceTree = "<group>"; };
-		855035512D0AD95F00F385B1 /* FavoritesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
-		855035532D0AD9EA00F385B1 /* SaveFavoriteAdsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavoriteAdsUseCase.swift; sourceTree = "<group>"; };
-		855035562D0ADA9900F385B1 /* LoadFavoritesAdsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFavoritesAdsUseCase.swift; sourceTree = "<group>"; };
-		8550355C2D0B1A3900F385B1 /* uikitChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uikitChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		855035692D0B1A5300F385B1 /* uikitChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uikitChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8550356B2D0B1A5300F385B1 /* uikitChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uikitChallengeUITests.swift; sourceTree = "<group>"; };
-		8550356D2D0B1A5300F385B1 /* uikitChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uikitChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		855035832D0B35C600F385B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		855035852D0B367400F385B1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		852717572D09B3A900131E4B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855035592D0B1A3900F385B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855035662D0B1A5300F385B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				8527175C2D09B3A900131E4B /* uikitChallenge */,
-				8550356A2D0B1A5300F385B1 /* uikitChallengeUITests */,
 				8527175B2D09B3A900131E4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				8527175A2D09B3A900131E4B /* uikitChallenge.app */,
-				8550355C2D0B1A3900F385B1 /* uikitChallengeTests.xctest */,
-				855035692D0B1A5300F385B1 /* uikitChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,9 +135,8 @@
 		852717772D09B62C00131E4B /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				855035552D0ADA8800F385B1 /* Favorites */,
-				852717752D09B62C00131E4B /* FetchAdListUseCase.swift */,
-				852717762D09B62C00131E4B /* FetchAdListUseCaseProtocol.swift */,
+				852717752D09B62C00131E4B /* IdealistaUseCase.swift */,
+				852717762D09B62C00131E4B /* IdealistaUseCaseProtocol.swift */,
 				855035492D09D54A00F385B1 /* AdDetailUseCase.swift */,
 			);
 			path = UseCase;
@@ -209,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				852717792D09B62C00131E4B /* LocalIdealistaDataSource.swift */,
-				8550354F2D0AD56B00F385B1 /* FavoriteAdsDataSource.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -227,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				8527177C2D09B62C00131E4B /* IdealistaRepository.swift */,
-				855035512D0AD95F00F385B1 /* FavoritesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -247,7 +192,6 @@
 				852717662D09B3AA00131E4B /* Assets.xcassets */,
 				852717802D09B62C00131E4B /* detail.json */,
 				852717812D09B62C00131E4B /* list.json */,
-				855035822D0B35C600F385B1 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -255,7 +199,6 @@
 		8527178C2D09B64100131E4B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				855035872D0B367A00F385B1 /* Extensions */,
 				855035402D09C72500F385B1 /* CustomViews */,
 				8550353F2D09C71F00F385B1 /* Screens */,
 				852717682D09B3AA00131E4B /* LaunchScreen.storyboard */,
@@ -363,32 +306,6 @@
 			path = AdDetail;
 			sourceTree = "<group>";
 		};
-		855035552D0ADA8800F385B1 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				855035532D0AD9EA00F385B1 /* SaveFavoriteAdsUseCase.swift */,
-				855035562D0ADA9900F385B1 /* LoadFavoritesAdsUseCase.swift */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
-		8550356A2D0B1A5300F385B1 /* uikitChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8550356B2D0B1A5300F385B1 /* uikitChallengeUITests.swift */,
-				8550356D2D0B1A5300F385B1 /* uikitChallengeUITestsLaunchTests.swift */,
-			);
-			path = uikitChallengeUITests;
-			sourceTree = "<group>";
-		};
-		855035872D0B367A00F385B1 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				855035852D0B367400F385B1 /* StringExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,42 +326,6 @@
 			productReference = 8527175A2D09B3A900131E4B /* uikitChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8550355B2D0B1A3900F385B1 /* uikitChallengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 855035622D0B1A3900F385B1 /* Build configuration list for PBXNativeTarget "uikitChallengeTests" */;
-			buildPhases = (
-				855035582D0B1A3900F385B1 /* Sources */,
-				855035592D0B1A3900F385B1 /* Frameworks */,
-				8550355A2D0B1A3900F385B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				855035612D0B1A3900F385B1 /* PBXTargetDependency */,
-			);
-			name = uikitChallengeTests;
-			productName = uikitChallengeTests;
-			productReference = 8550355C2D0B1A3900F385B1 /* uikitChallengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		855035682D0B1A5300F385B1 /* uikitChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 855035712D0B1A5300F385B1 /* Build configuration list for PBXNativeTarget "uikitChallengeUITests" */;
-			buildPhases = (
-				855035652D0B1A5300F385B1 /* Sources */,
-				855035662D0B1A5300F385B1 /* Frameworks */,
-				855035672D0B1A5300F385B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				855035702D0B1A5300F385B1 /* PBXTargetDependency */,
-			);
-			name = uikitChallengeUITests;
-			productName = uikitChallengeUITests;
-			productReference = 855035692D0B1A5300F385B1 /* uikitChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -457,14 +338,6 @@
 				TargetAttributes = {
 					852717592D09B3A900131E4B = {
 						CreatedOnToolsVersion = 15.4;
-					};
-					8550355B2D0B1A3900F385B1 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 852717592D09B3A900131E4B;
-					};
-					855035682D0B1A5300F385B1 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 852717592D09B3A900131E4B;
 					};
 				};
 			};
@@ -482,8 +355,6 @@
 			projectRoot = "";
 			targets = (
 				852717592D09B3A900131E4B /* uikitChallenge */,
-				8550355B2D0B1A3900F385B1 /* uikitChallengeTests */,
-				855035682D0B1A5300F385B1 /* uikitChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,24 +367,9 @@
 				852717672D09B3AA00131E4B /* Assets.xcassets in Resources */,
 				8527176A2D09B3AA00131E4B /* Base in Resources */,
 				855035432D09C79500F385B1 /* AdTableViewCell.xib in Resources */,
-				855035842D0B35C600F385B1 /* Localizable.strings in Resources */,
 				8527178A2D09B62C00131E4B /* detail.json in Resources */,
 				852717652D09B3A900131E4B /* Base in Resources */,
 				8527178B2D09B62C00131E4B /* list.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8550355A2D0B1A3900F385B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855035672D0B1A5300F385B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +388,10 @@
 				8550353C2D09C54A00F385B1 /* AdDetail.swift in Sources */,
 				855034FE2D09C2F700F385B1 /* MultimediaDTO.swift in Sources */,
 				852717882D09B62C00131E4B /* IdealistaRepository.swift in Sources */,
-				855035862D0B367400F385B1 /* StringExtension.swift in Sources */,
-				852717852D09B62C00131E4B /* FetchAdListUseCase.swift in Sources */,
-				855035502D0AD56B00F385B1 /* FavoriteAdsDataSource.swift in Sources */,
+				852717852D09B62C00131E4B /* IdealistaUseCase.swift in Sources */,
 				852717842D09B62C00131E4B /* IdealistaRepositoryProtocol.swift in Sources */,
 				855035452D09C90A00F385B1 /* AdTableViewCell.swift in Sources */,
-				855035572D0ADA9900F385B1 /* LoadFavoritesAdsUseCase.swift in Sources */,
 				855034FD2D09C2F700F385B1 /* FeaturesDTO.swift in Sources */,
-				855035542D0AD9EA00F385B1 /* SaveFavoriteAdsUseCase.swift in Sources */,
 				855035002D09C2F700F385B1 /* PriceDTO.swift in Sources */,
 				8550354E2D09D67D00F385B1 /* AdDetailBuilder.swift in Sources */,
 				855034FB2D09C2F700F385B1 /* UbicationDTO.swift in Sources */,
@@ -549,48 +401,18 @@
 				8550353B2D09C54A00F385B1 /* Ad.swift in Sources */,
 				855034FF2D09C2F700F385B1 /* ParkingSpaceDTO.swift in Sources */,
 				852717602D09B3A900131E4B /* SceneDelegate.swift in Sources */,
-				852717862D09B62C00131E4B /* FetchAdListUseCaseProtocol.swift in Sources */,
+				852717862D09B62C00131E4B /* IdealistaUseCaseProtocol.swift in Sources */,
 				855034F62D09C2F700F385B1 /* EnergyCertificationDTO.swift in Sources */,
 				852717872D09B62C00131E4B /* LocalIdealistaDataSource.swift in Sources */,
 				855034FC2D09C2F700F385B1 /* AdDTO.swift in Sources */,
 				855034F42D09C2F700F385B1 /* AdDetailDTO.swift in Sources */,
-				855035522D0AD95F00F385B1 /* FavoritesRepository.swift in Sources */,
 				8550353E2D09C5B600F385B1 /* AdListViewModel.swift in Sources */,
 				855034F72D09C2F700F385B1 /* EnergyConsumptionDTO.swift in Sources */,
 				855034F92D09C2F700F385B1 /* MoreCharacteristicsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		855035582D0B1A3900F385B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855035652D0B1A5300F385B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8550356C2D0B1A5300F385B1 /* uikitChallengeUITests.swift in Sources */,
-				8550356E2D0B1A5300F385B1 /* uikitChallengeUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		855035612D0B1A3900F385B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 852717592D09B3A900131E4B /* uikitChallenge */;
-			targetProxy = 855035602D0B1A3900F385B1 /* PBXContainerItemProxy */;
-		};
-		855035702D0B1A5300F385B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 852717592D09B3A900131E4B /* uikitChallenge */;
-			targetProxy = 8550356F2D0B1A5300F385B1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		852717632D09B3A900131E4B /* AdList.storyboard */ = {
@@ -607,14 +429,6 @@
 				852717692D09B3AA00131E4B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		855035822D0B35C600F385B1 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				855035832D0B35C600F385B1 /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -795,72 +609,6 @@
 			};
 			name = Release;
 		};
-		855035632D0B1A3900F385B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.uikitChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uikitChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/uikitChallenge";
-			};
-			name = Debug;
-		};
-		855035642D0B1A3900F385B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.uikitChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uikitChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/uikitChallenge";
-			};
-			name = Release;
-		};
-		855035722D0B1A5300F385B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.uikitChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = uikitChallenge;
-			};
-			name = Debug;
-		};
-		855035732D0B1A5300F385B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.uikitChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = uikitChallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -878,24 +626,6 @@
 			buildConfigurations = (
 				8527176F2D09B3AA00131E4B /* Debug */,
 				852717702D09B3AA00131E4B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		855035622D0B1A3900F385B1 /* Build configuration list for PBXNativeTarget "uikitChallengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				855035632D0B1A3900F385B1 /* Debug */,
-				855035642D0B1A3900F385B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		855035712D0B1A5300F385B1 /* Build configuration list for PBXNativeTarget "uikitChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				855035722D0B1A5300F385B1 /* Debug */,
-				855035732D0B1A5300F385B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
