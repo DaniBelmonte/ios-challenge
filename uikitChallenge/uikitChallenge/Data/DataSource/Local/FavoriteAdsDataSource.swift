@@ -8,41 +8,31 @@
 import Foundation
 
 protocol FavoriteAdsDataSourceProtocol {
-    func saveFavoritePropertyCode(_ propertyCode: String) throws
-    func loadFavoritePropertyCodes() throws -> [String]
+    func saveFavoriteAd(_ ad: Ad) throws
+    func loadFavoriteAds() throws -> [Ad]
 }
 
 class FavoriteAdsDataSource: FavoriteAdsDataSourceProtocol {
-    private let favoritesKey = "favoritePropertyCodes"
+    private let favoritesKey = "favoriteAds"
 
-    func saveFavoritePropertyCode(_ propertyCode: String) throws {
-        var currentFavorites = try loadFavoritePropertyCodes()
-        if !currentFavorites.contains(propertyCode) {
-            currentFavorites.append(propertyCode)
+    func saveFavoriteAd(_ ad: Ad) throws {
+        var favorites: [Ad] = try loadFavoriteAds()
+        
+        if let index = favorites.firstIndex(where: { $0.propertyCode == ad.propertyCode }) {
+            favorites.remove(at: index)
         } else {
-            try removeFavoritePropertyCode(propertyCode: propertyCode)
+            favorites.append(ad)
         }
 
-        let encoder = JSONEncoder()
-        let data = try encoder.encode(currentFavorites)
+        let data = try JSONEncoder().encode(favorites)
         UserDefaults.standard.set(data, forKey: favoritesKey)
     }
 
-    func removeFavoritePropertyCode(propertyCode: String) throws {
-        var currentFavorites = try loadFavoritePropertyCodes()
-        currentFavorites.removeAll(where: { $0 == propertyCode })
-
-        let encoder = JSONEncoder()
-        let data = try encoder.encode(currentFavorites)
-        UserDefaults.standard.set(data, forKey: favoritesKey)
-    }
-
-    func loadFavoritePropertyCodes() throws -> [String] {
-        guard let data = UserDefaults.standard.data(forKey: favoritesKey) else {
+    func loadFavoriteAds() throws -> [Ad] {
+        guard let data = UserDefaults.standard.data(forKey: favoritesKey),
+              let favorites = try? JSONDecoder().decode([Ad].self, from: data) else {
             return []
         }
-
-        let decoder = JSONDecoder()
-        return try decoder.decode([String].self, from: data)
+        return favorites
     }
 }

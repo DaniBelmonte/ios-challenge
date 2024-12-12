@@ -13,16 +13,22 @@ protocol LoadFavoriteAdsUseCaseProtocol {
 
 class LoadFavoriteAdsUseCase: LoadFavoriteAdsUseCaseProtocol {
     private let repository: FavoriteAdsRepositoryProtocol
-    
+
     init(repository: FavoriteAdsRepositoryProtocol) {
         self.repository = repository
     }
-    
+
     func execute(allAds: inout [Ad]) throws {
-        let favoritePropertyCodes = try repository.loadFavoritePropertyCodes()
+        let favoriteAds = try repository.loadFavoriteAds()
 
         for index in allAds.indices {
-            allAds[index].isFavorite = favoritePropertyCodes.contains(allAds[index].propertyCode)
+            if let favoriteAd = favoriteAds.first(where: { $0.propertyCode == allAds[index].propertyCode }) {
+                allAds[index].isFavorite = true
+                allAds[index].favoriteDate = favoriteAd.favoriteDate
+            } else {
+                allAds[index].isFavorite = false
+                allAds[index].favoriteDate = nil
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ad: Identifiable {
+struct Ad: Identifiable, Encodable, Decodable {
     let id: UUID
     let propertyCode: String
     let title: String
@@ -27,6 +27,7 @@ struct Ad: Identifiable {
     let longitude: Double
     let parkingSpace: ParkingSpace?
     var isFavorite: Bool
+    var favoriteDate: Date?
 
 
     init(dto: AdDTO) {
@@ -65,7 +66,7 @@ struct Ad: Identifiable {
     }
 }
 
-struct ParkingSpace {
+struct ParkingSpace: Encodable, Decodable {
     let hasParkingSpace: Bool
     let isIncludedInPrice: Bool
 

@@ -7,19 +7,17 @@
 
 import Foundation
 
-
 class AdListViewModel {
-    //MARK: Properties
+    // MARK: Properties
     private let fetchAdListUseCase: FetchAdListUseCaseProtocol
-    private let saveFavoriteAdUseCase: SaveFavoriteAdsUseCaseProtocol
+    private let saveFavoriteAdUseCase: SaveFavoriteAdUseCaseProtocol
     private let loadFavoriteAdsUseCase: LoadFavoriteAdsUseCaseProtocol
 
     private(set) var ads: [Ad] = []
-    private(set) var favoriteAds: [Ad] = []
 
     init(
         fetchAdListUseCase: FetchAdListUseCaseProtocol = FetchAdListUseCase(repository: IdealistaRepository(localDataSource: LocalIdealistaDataSource())),
-        saveFavoriteAdUseCase: SaveFavoriteAdsUseCaseProtocol = SaveFavoriteAdUseCase(repository: FavoriteAdsRepository(dataSource: FavoriteAdsDataSource())),
+        saveFavoriteAdUseCase: SaveFavoriteAdUseCaseProtocol = SaveFavoriteAdUseCase(repository: FavoriteAdsRepository(dataSource: FavoriteAdsDataSource())),
         loadFavoriteAdsUseCase: LoadFavoriteAdsUseCaseProtocol = LoadFavoriteAdsUseCase(repository: FavoriteAdsRepository(dataSource: FavoriteAdsDataSource()))
     ) {
         self.fetchAdListUseCase = fetchAdListUseCase
@@ -27,14 +25,12 @@ class AdListViewModel {
         self.loadFavoriteAdsUseCase = loadFavoriteAdsUseCase
     }
 
-    //MARK: Funtions
+    // MARK: Functions
     func fetchAds(completion: @escaping (Result<Void, Error>) -> Void) {
         Task {
             do {
                 self.ads = try await fetchAdListUseCase.fetchAds()
-
                 try loadFavoriteAdsUseCase.execute(allAds: &self.ads)
-                
                 completion(.success(()))
             } catch {
                 completion(.failure(error))
@@ -46,14 +42,19 @@ class AdListViewModel {
         if let index = ads.firstIndex(where: { $0.propertyCode == ad.propertyCode }) {
             ads[index].isFavorite.toggle()
             
+            if ads[index].isFavorite {
+                ads[index].favoriteDate = Date()
+            } else {
+                ads[index].favoriteDate = nil
+            }
+            
             do {
-                try saveFavoriteAdUseCase.execute(propertyCode: ad.propertyCode)
-                
+                try saveFavoriteAdUseCase.execute(ad: ads[index])
                 completion(.success(()))
-                
             } catch {
                 completion(.failure(error))
             }
         }
     }
+
 }

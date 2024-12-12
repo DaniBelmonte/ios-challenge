@@ -14,6 +14,7 @@ class AdTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
 
+    @IBOutlet weak var favoriteDateLabel: UILabel!
     private let favoriteButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "heart"), for: .normal)
@@ -62,7 +63,7 @@ class AdTableViewCell: UITableViewCell {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 120),
+            favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 104),
             favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             favoriteButton.widthAnchor.constraint(equalToConstant: 24),
             favoriteButton.heightAnchor.constraint(equalToConstant: 24)
@@ -83,6 +84,17 @@ class AdTableViewCell: UITableViewCell {
             for: .normal
         )
         favoriteButton.tintColor = ad.isFavorite ? .red : .gray
+
+        if let favoriteDate = ad.favoriteDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            favoriteDateLabel.text = "Favorited on \(dateFormatter.string(from: favoriteDate))"
+            favoriteDateLabel.isHidden = false
+        } else {
+            favoriteDateLabel.text = nil
+            favoriteDateLabel.isHidden = true
+        }
 
         favoriteButton.addAction(UIAction(handler: { _ in
             toggleFavorite()

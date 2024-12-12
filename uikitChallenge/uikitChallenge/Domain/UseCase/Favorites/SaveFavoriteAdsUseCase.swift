@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol SaveFavoriteAdsUseCaseProtocol {
-    func execute(propertyCode: String) throws
+protocol SaveFavoriteAdUseCaseProtocol {
+    func execute(ad: Ad) throws
 }
 
-class SaveFavoriteAdUseCase: SaveFavoriteAdsUseCaseProtocol {
+class SaveFavoriteAdUseCase: SaveFavoriteAdUseCaseProtocol {
     private let repository: FavoriteAdsRepositoryProtocol
 
     init(repository: FavoriteAdsRepositoryProtocol) {
         self.repository = repository
     }
 
-    func execute(propertyCode: String) throws {
-        try repository.saveFavorite(propertyCode: propertyCode)
+    func execute(ad: Ad) throws {
+        try repository.saveFavoriteAd(ad)
     }
 }

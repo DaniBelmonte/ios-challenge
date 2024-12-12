@@ -8,8 +8,8 @@
 import Foundation
 
 protocol FavoriteAdsRepositoryProtocol {
-    func loadFavoritePropertyCodes() throws -> [String]
-    func saveFavorite(propertyCode: String) throws
+    func saveFavoriteAd(_ ad: Ad) throws
+    func loadFavoriteAds() throws -> [Ad]
 }
 
 class FavoriteAdsRepository: FavoriteAdsRepositoryProtocol {
@@ -19,11 +19,11 @@ class FavoriteAdsRepository: FavoriteAdsRepositoryProtocol {
         self.dataSource = dataSource
     }
 
-    func saveFavorite(propertyCode: String) throws {
-        try dataSource.saveFavoritePropertyCode(propertyCode)
+    func saveFavoriteAd(_ ad: Ad) throws {
+        try dataSource.saveFavoriteAd(ad)
     }
 
-    func loadFavoritePropertyCodes() throws -> [String] {
-        return try dataSource.loadFavoritePropertyCodes()
+    func loadFavoriteAds() throws -> [Ad] {
+        return try dataSource.loadFavoriteAds()
     }
 }
